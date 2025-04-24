@@ -1,0 +1,12 @@
+services:
+  - type: web               # Web Service (dynamic Node.js app)
+    name: tai-xiu-demo      # Your service name on Render
+    env: node               # Runtime environment
+    plan: free              # Free tier
+    repo: https://github.com/<YOUR_USERNAME>/tai-xiu-demo
+    branch: main
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
